@@ -32,13 +32,13 @@ function startCarousel() {
             showSlide(index - 1);
         }
 
-        // 🔹 NEW FIX: Force carousel to start after 3 seconds even if images aren't loaded
+        // 🔹 Fix: Force carousel to start after 2 seconds even if images aren’t loaded
         setTimeout(() => {
             console.log("Forcing carousel to start!");
             setInterval(nextSlide, 3000);
-        }, 3000);
+        }, 2000);
 
-        // Add Previous/Next button functionality
+        // 🔹 Fix: Make Previous/Next Buttons Work
         const prevButton = container.querySelector(".prev");
         const nextButton = container.querySelector(".next");
 
@@ -47,7 +47,8 @@ function startCarousel() {
     });
 }
 
-// Ensure the script runs after the page fully loads
+// 🔹 Ensure JavaScript runs AFTER the full page loads
 window.addEventListener("load", function () {
     setTimeout(startCarousel, 1000);
 });
+
