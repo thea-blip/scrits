@@ -32,12 +32,11 @@ function startCarousel() {
             showSlide(index - 1);
         }
 
-        // Auto-slide every 3 seconds
-        let autoSlide = setInterval(nextSlide, 3000);
-
-        // Stop auto-slide when user interacts
-        container.addEventListener("mouseenter", () => clearInterval(autoSlide));
-        container.addEventListener("mouseleave", () => autoSlide = setInterval(nextSlide, 3000));
+        // 🔹 NEW FIX: Force carousel to start after 3 seconds even if images aren't loaded
+        setTimeout(() => {
+            console.log("Forcing carousel to start!");
+            setInterval(nextSlide, 3000);
+        }, 3000);
 
         // Add Previous/Next button functionality
         const prevButton = container.querySelector(".prev");
