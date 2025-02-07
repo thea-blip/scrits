@@ -31,4 +31,3 @@ function startCarousel() {
 window.addEventListener("load", function () {
     setTimeout(startCarousel, 1000);
 });
-
